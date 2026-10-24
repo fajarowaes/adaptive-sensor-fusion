@@ -1,3 +1,14 @@
+# Generated dataset
 motionsense_cleaned.csv
+motionsense_output/
+
+# Downloaded archives
 *.zip
+
+# Python temporary files
 __pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environment secrets
+.env
