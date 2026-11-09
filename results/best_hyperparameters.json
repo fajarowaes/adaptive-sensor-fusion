@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "model": "baseline",
+    "lr": 0.0005,
+    "batch_size": 64,
+    "dropout": 0.3,
+    "optimizer": "adam",
+    "max_epochs": 30,
+    "best_val_acc": 0.9590973201692524,
+    "best_val_loss": 0.13160871657959303,
+    "best_epoch": 6,
+    "epochs_run": 13,
+    "train_time_s": 135.2,
+    "stage": "random",
+    "seed": 42
+  },
+  "adaptive": {
+    "model": "adaptive",
+    "lr": 0.001,
+    "batch_size": 32,
+    "dropout": 0.5,
+    "optimizer": "adam",
+    "max_epochs": 30,
+    "best_val_acc": 0.9602256699576869,
+    "best_val_loss": 0.1293436513649102,
+    "best_epoch": 6,
+    "epochs_run": 13,
+    "train_time_s": 331.1,
+    "stage": "random",
+    "seed": 42
+  }
+}

@@ -198,6 +198,8 @@ def train_model(
     models_dir: Optional[Path] = None,
     smoke_test: bool = False,
     smoke_samples: int = 256,
+    checkpoint_filename: Optional[str] = None,
+    config_filename: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Executes a complete training and validation cycle with early stopping.
@@ -441,13 +443,25 @@ def train_model(
     history_df = pd.DataFrame(history_records)
 
     # 7. Checkpoint & Artifact Serialization
-    checkpoint_file = out_mod_dir / f"{model_name}_best.pth"
-    config_file = out_mod_dir / f"{model_name}_config.json"
+    if checkpoint_filename is not None:
+        checkpoint_file = out_mod_dir / checkpoint_filename
+    elif train_condition == "degradation_aware":
+        checkpoint_file = out_mod_dir / f"{model_name}_degradation_aware.pth"
+    else:
+        checkpoint_file = out_mod_dir / f"{model_name}_best.pth"
+
+    if config_filename is not None:
+        config_file = out_mod_dir / config_filename
+    elif train_condition == "degradation_aware":
+        config_file = out_mod_dir / f"{model_name}_degradation_aware_config.json"
+    else:
+        config_file = out_mod_dir / f"{model_name}_config.json"
+
     metrics_file = out_res_dir / f"metrics_{run_id}.json"
     history_csv = out_res_dir / "training_history.csv"
 
     # Save model checkpoint using Member 1's helpers
-    if not smoke_test:
+    if not smoke_test or checkpoint_filename is not None:
         if is_adaptive:
             save_adaptive_model(model, str(checkpoint_file))
         else:
@@ -498,7 +512,7 @@ def train_model(
         "timestamp_utc": timestamp,
     }
 
-    if not smoke_test:
+    if not smoke_test or checkpoint_filename is not None:
         with open(config_file, "w", encoding="utf-8") as f:
             json.dump(config_data, f, indent=4)
         logger.info(f"Saved model configuration to: {config_file}")
