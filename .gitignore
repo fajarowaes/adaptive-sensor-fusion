@@ -12,3 +12,9 @@ __pycache__/
 
 # Environment secrets
 .env
+
+# Virtual environments & local launcher config
+.venv/
+venv/
+env/
+py.ini

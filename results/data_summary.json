@@ -1,0 +1,99 @@
+{
+    "seed": 42,
+    "window_size": 100,
+    "stride": 50,
+    "overlap_percentage": 50.0,
+    "num_sensor_features": 12,
+    "feature_order": [
+        "attitude.roll",
+        "attitude.pitch",
+        "attitude.yaw",
+        "gravity.x",
+        "gravity.y",
+        "gravity.z",
+        "rotationRate.x",
+        "rotationRate.y",
+        "rotationRate.z",
+        "userAcceleration.x",
+        "userAcceleration.y",
+        "userAcceleration.z"
+    ],
+    "input_shape_array": [
+        100,
+        12
+    ],
+    "input_shape_model": [
+        12,
+        100
+    ],
+    "participants_per_split": {
+        "train": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10,
+            12,
+            13,
+            14,
+            16,
+            17,
+            18,
+            19,
+            22,
+            23
+        ],
+        "val": [
+            8,
+            21,
+            24
+        ],
+        "test": [
+            7,
+            11,
+            15,
+            20
+        ]
+    },
+    "participant_counts": {
+        "train": 17,
+        "val": 3,
+        "test": 4,
+        "total": 24
+    },
+    "total_windows_per_split": {
+        "train": 19562,
+        "val": 3545,
+        "test": 4613,
+        "total": 27720
+    },
+    "class_counts_per_split": {
+        "train": {
+            "downstairs": 1799,
+            "jogging": 1878,
+            "sitting": 4705,
+            "standing": 4208,
+            "upstairs": 2139,
+            "walking": 4833
+        },
+        "val": {
+            "downstairs": 323,
+            "jogging": 330,
+            "sitting": 849,
+            "standing": 849,
+            "upstairs": 375,
+            "walking": 819
+        },
+        "test": {
+            "downstairs": 406,
+            "jogging": 404,
+            "sitting": 1151,
+            "standing": 1003,
+            "upstairs": 523,
+            "walking": 1126
+        }
+    }
+}

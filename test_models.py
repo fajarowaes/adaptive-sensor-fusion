@@ -1,3 +1,4 @@
+#!.venv/Scripts/python.exe
 """
 test_models.py
 

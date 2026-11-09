@@ -1,3 +1,4 @@
+#!.venv/Scripts/python.exe
 """
 src/generate_diagram.py
 
