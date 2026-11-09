@@ -178,8 +178,11 @@ python src/generate_diagram.py
 
 Raw datasets and large generated files are excluded from GitHub through `.gitignore`. The repository maintains the preprocessing scripts, notebook, and documentation required to reproduce the workflow.
 
+<<<<<<< HEAD
 ## Team Contributions
 
 - **Member 1 (Architecture & Implementation):** Designed and implemented the PyTorch Baseline 1D CNN (`src/model.py`) and the dual-branch Adaptive Sensor Fusion model (`src/sensor_fusion.py`) with dynamic reliability gating and sensor availability masking. Created the architecture diagram (`diagrams/model_architecture.png`), requirements, and authored the Phase 3 LaTeX report section (`Reports/model_architecture.tex`).
 - **Member 2 (Training & Validation Pipeline):** (Responsible for data windowing, training loops, validation curves, and checkpoint training).
 - **Member 3 (Evaluation & Robustness Benchmark):** (Responsible for performance metrics, confusion matrices, and noisy/unavailable sensor stress-tests).
+=======
+>>>>>>> b041a51a115df2177820e7acba780a4f166a974f
