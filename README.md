@@ -122,6 +122,3 @@ These experiments will investigate whether adaptive sensor fusion can improve th
 
 Raw datasets and large generated files are excluded from GitHub through `.gitignore`. The repository maintains the preprocessing scripts, notebook, and documentation required to reproduce the workflow.
 
-## Team Contributions
-
-Add all group members' names and briefly describe their actual contributions to the project.
